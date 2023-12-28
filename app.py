@@ -280,6 +280,12 @@ class CurrencyApp(QMainWindow):
         rates_layout.addWidget(table)
 
         self.rates_window.setLayout(rates_layout)
+
+        # Add Maximize Button
+        self.setWindowFlag(Qt.WindowMinimizeButtonHint, True)
+        self.setWindowFlag(Qt.WindowMaximizeButtonHint, True)
+
+        self.setWindowFlags(self.windowFlags() | Qt.WindowFlags(Qt.WindowMinimizeButtonHint | Qt.WindowMaximizeButtonHint))
         self.rates_window.showMaximized()
 
     def manage_rates(self):
